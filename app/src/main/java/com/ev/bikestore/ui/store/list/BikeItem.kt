@@ -1,4 +1,4 @@
-package com.ev.bikestore.ui.type
+package com.ev.bikestore.ui.store.list
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,19 +14,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ev.bikestore.entity.Bike
 import com.ev.bikestore.ui.theme.BikeStoreTheme
 
-
-@ExperimentalMaterialApi
 @Composable
-fun ChooseUserTypeCard(
-    title: String,
-    onClick: () -> Unit
-) {
+fun BikeItem(bike: Bike) {
+
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(260.dp)
+            .height(150.dp)
             .padding(
                 horizontal = 12.dp,
                 vertical = 8.dp,
@@ -34,17 +31,31 @@ fun ChooseUserTypeCard(
         backgroundColor = MaterialTheme.colors.primary,
         shape = RoundedCornerShape(12.dp),
         elevation = 2.dp,
-        onClick = onClick,
     ) {
         Column(
             modifier = Modifier
                 .padding(24.dp)
         ) {
             Text(
-                text = title,
+                text = bike.name,
                 color = Color.White,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(vertical = 2.dp)
+            )
+            Text(
+                text = bike.shopName,
+                color = Color.White,
+                style = MaterialTheme.typography.caption,
+            )
+            Text(
+                text = bike.manufacturer,
+                color = Color.White,
+                style = MaterialTheme.typography.caption,
+            )
+            Text(
+                text = "lat : ${bike.latitude}, lng: ${bike.longitude}",
+                color = Color.White,
+                style = MaterialTheme.typography.caption,
             )
         }
     }
@@ -53,8 +64,17 @@ fun ChooseUserTypeCard(
 @ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
-fun ChooseUserTypeCardPreview() {
+fun BikeItemPreview() {
     BikeStoreTheme {
-        ChooseUserTypeCard(title = "TITLE", onClick = {})
+        BikeItem(
+            bike = Bike(
+                id = 0,
+                shopName = "MyBikeShop1",
+                latitude = 70.0f,
+                longitude = -120f,
+                manufacturer = "Brompton",
+                name = "Comp"
+            )
+        )
     }
 }

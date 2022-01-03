@@ -71,11 +71,13 @@ dependencies {
     implementation(Libs.AndroidX.Navigation.compose)
     implementation(Libs.AndroidX.Compose.runtimeLivedata)
     implementation(Libs.AndroidX.Lifecycle.viewModelCompose)
+    implementation(Libs.AndroidX.Lifecycle.viewModelKtx)
 
     implementation(Libs.AndroidX.Room.runtime)
-    implementation(Libs.AndroidX.Room.rxjava)
+    implementation(Libs.AndroidX.Room.ktx)
     kapt(Libs.AndroidX.Room.compiler)
 
+    implementation(Libs.AndroidX.Hilt.compose)
     implementation(Libs.Dagger.Hilt.android)
     kapt(Libs.Dagger.Hilt.compiler)
 }

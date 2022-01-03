@@ -25,12 +25,10 @@ fun ChooseUserTypeScreen(eventAction: (Event) -> Unit) {
     ) {
         ChooseUserTypeCard(
             title = "Store",
-            backgroundColor = Primary,
             onClick = { eventAction.invoke(MainScreenEvent.OnClickStoreType) }
         )
         ChooseUserTypeCard(
             title = "Customer",
-            backgroundColor = Primary,
             onClick = { eventAction.invoke(MainScreenEvent.OnClickCustomerType) }
         )
     }

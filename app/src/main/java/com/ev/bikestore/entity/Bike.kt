@@ -13,7 +13,7 @@ data class Bike(
 
     var shopName: String,
     @FloatRange(from = (-90.0), to = 90.0) var latitude: Float,
-    @FloatRange(from = (-90.0), to = 90.0) var longitude: Float,
+    @FloatRange(from = (-180.0), to = 180.0) var longitude: Float,
     var manufacturer: String,
     var name: String
 ) : Parcelable

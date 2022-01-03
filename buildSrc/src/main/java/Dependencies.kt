@@ -32,6 +32,7 @@ object Libs {
         object Lifecycle {
             private const val version = "2.4.0"
             const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
+            const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
         }
 
         object Navigation {
@@ -44,8 +45,14 @@ object Libs {
             private const val version = "2.2.6"
 
             const val runtime = "androidx.room:room-runtime:$version"
-            const val rxjava = "androidx.room:room-rxjava2:$version"
+            const val ktx = "androidx.room:room-ktx:$version"
             const val compiler = "androidx.room:room-compiler:$version"
+
+        }
+
+        object Hilt {
+            private const val version = "1.0.0-alpha02"
+            const val compose = "androidx.hilt:hilt-navigation-compose:$version"
         }
     }
 

@@ -5,15 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.ExperimentalMaterialApi
 import com.ev.bikestore.ui.theme.BikeStoreTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StoreActivity : ComponentActivity() {
-
     @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             BikeStoreTheme {
-
+                StoreScreen()
             }
         }
     }
