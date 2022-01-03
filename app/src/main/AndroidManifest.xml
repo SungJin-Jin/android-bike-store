@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BikeStore">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BikeStore.NoActionBar">
@@ -20,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.store.StoreActivity"
+            android:exported="true"
+            android:label="@string/title_activity_store"
+            android:theme="@style/Theme.BikeStore.NoActionBar" />
     </application>
 
 </manifest>

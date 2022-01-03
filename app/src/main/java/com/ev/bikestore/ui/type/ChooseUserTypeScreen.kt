@@ -4,20 +4,19 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import com.ev.bikestore.component.Event
+import com.ev.bikestore.ui.main.MainScreenEvent
 import com.ev.bikestore.ui.theme.Background
 import com.ev.bikestore.ui.theme.BikeStoreTheme
 import com.ev.bikestore.ui.theme.Primary
 
 @ExperimentalMaterialApi
 @Composable
-fun ChooseUserTypeScreen() {
+fun ChooseUserTypeScreen(eventAction: (Event) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -25,14 +24,14 @@ fun ChooseUserTypeScreen() {
             .background(Background),
     ) {
         ChooseUserTypeCard(
-            title = "SHOP",
+            title = "Store",
             backgroundColor = Primary,
-            onClick = {}
+            onClick = { eventAction.invoke(MainScreenEvent.OnClickStoreType) }
         )
         ChooseUserTypeCard(
-            title = "CUSTOMER",
+            title = "Customer",
             backgroundColor = Primary,
-            onClick = {}
+            onClick = { eventAction.invoke(MainScreenEvent.OnClickCustomerType) }
         )
     }
 }
@@ -42,6 +41,6 @@ fun ChooseUserTypeScreen() {
 @Composable
 fun ChooseUserTypePreview() {
     BikeStoreTheme {
-        ChooseUserTypeScreen()
+        ChooseUserTypeScreen {}
     }
 }

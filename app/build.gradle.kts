@@ -36,12 +36,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        useIR = true
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Libs.AndroidX.Compose.version
+        kotlinCompilerVersion = "1.5.21"
     }
     packagingOptions {
         resources {
