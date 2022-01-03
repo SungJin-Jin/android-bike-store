@@ -39,6 +39,14 @@ object Libs {
 
             const val compose = "androidx.navigation:navigation-compose:2.4.0-beta02"
         }
+
+        object Room {
+            private const val version = "2.2.6"
+
+            const val runtime = "androidx.room:room-runtime:$version"
+            const val rxjava = "androidx.room:room-rxjava2:$version"
+            const val compiler = "androidx.room:room-compiler:$version"
+        }
     }
 
     object Dagger {

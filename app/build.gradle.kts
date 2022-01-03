@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
     kotlin("plugin.serialization")
 }
@@ -71,6 +72,9 @@ dependencies {
     implementation(Libs.AndroidX.Compose.runtimeLivedata)
     implementation(Libs.AndroidX.Lifecycle.viewModelCompose)
 
+    implementation(Libs.AndroidX.Room.runtime)
+    implementation(Libs.AndroidX.Room.rxjava)
+    kapt(Libs.AndroidX.Room.compiler)
 
     implementation(Libs.Dagger.Hilt.android)
     kapt(Libs.Dagger.Hilt.compiler)

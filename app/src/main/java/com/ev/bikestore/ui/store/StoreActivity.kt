@@ -13,6 +13,7 @@ class StoreActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             BikeStoreTheme {
+
             }
         }
     }
