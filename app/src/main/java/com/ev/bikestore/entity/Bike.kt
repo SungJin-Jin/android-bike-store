@@ -1,5 +1,6 @@
 package com.ev.bikestore.entity
 
+import android.location.Location
 import android.os.Parcelable
 import androidx.annotation.FloatRange
 import androidx.room.Entity
@@ -16,4 +17,12 @@ data class Bike(
     @FloatRange(from = (-180.0), to = 180.0) var longitude: Float,
     var manufacturer: String,
     var name: String
-) : Parcelable
+) : Parcelable {
+    fun toLocation() :Location{
+        return Location("").apply {
+            latitude = this@Bike.latitude.toDouble()
+            longitude = this@Bike.longitude.toDouble()
+        }
+
+    }
+}

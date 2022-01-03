@@ -13,6 +13,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ev.bikestore.ui.map.GoogleMapView
 import com.ev.bikestore.ui.theme.BikeStoreTheme
+import com.google.android.libraries.maps.model.LatLng
+import com.google.android.libraries.maps.model.MarkerOptions
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,8 +22,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun CustomerScreen() {
 
-//    val viewModel = hiltViewModel<CustomerViewModel>()
-//    val bikes = viewModel.bikes.observeAsState()
+    val viewModel = hiltViewModel<CustomerViewModel>()
+    val bikeLocations = viewModel.bikeLocations.observeAsState()
     val mapView = GoogleMapView()
 
     Column(
@@ -31,10 +33,15 @@ fun CustomerScreen() {
     ) {
         AndroidView({ mapView }) {
             CoroutineScope(Dispatchers.Main).launch {
-                mapView.getMapAsync {
-                    it.mapType = 1
-                    it.uiSettings.isZoomControlsEnabled = true
+                mapView.getMapAsync { googleMap ->
+                    googleMap.mapType = 1
+                    googleMap.uiSettings.isZoomControlsEnabled = true
+
+                    bikeLocations.value?.forEach { bikeLocation ->
+                        googleMap.addMarker(MarkerOptions().position(bikeLocation))
+                    }
                 }
+
             }
         }
     }
