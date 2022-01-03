@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     kotlin("plugin.serialization")
 }
 
@@ -58,6 +59,8 @@ dependencies {
     implementation(Libs.Kotlin.serializable)
 
     implementation(Libs.AndroidX.appcompat)
+    implementation(Libs.AndroidX.fragment)
+
     implementation(Libs.AndroidX.coreKtx)
 
     implementation(Libs.Google.material)
@@ -80,4 +83,7 @@ dependencies {
     implementation(Libs.AndroidX.Hilt.compose)
     implementation(Libs.Dagger.Hilt.android)
     kapt(Libs.Dagger.Hilt.compiler)
+
+    implementation(Libs.Maps.maps)
+    implementation(Libs.Maps.ktx)
 }

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ev.bikestore">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
     <application
         android:name=".BikeStoreApplication"
         android:allowBackup="true"
@@ -10,6 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BikeStore">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}"/>
+
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
@@ -25,7 +32,11 @@
         <activity
             android:name=".ui.store.StoreActivity"
             android:exported="true"
-            android:label="@string/title_activity_store"
+            android:theme="@style/Theme.BikeStore.NoActionBar" />
+
+        <activity
+            android:name=".ui.customer.CustomerActivity"
+            android:exported="true"
             android:theme="@style/Theme.BikeStore.NoActionBar" />
     </application>
 

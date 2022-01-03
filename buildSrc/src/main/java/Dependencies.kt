@@ -14,6 +14,7 @@ object Libs {
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:1.7.0"
         const val appcompat = "androidx.appcompat:appcompat:1.3.0"
+        const val fragment = "androidx.fragment:fragment:1.3.2"
 
         object Activity {
             const val activityCompose = "androidx.activity:activity-compose:1.4.0"
@@ -64,6 +65,11 @@ object Libs {
             const val android = "com.google.dagger:hilt-android:$version"
             const val compiler = "com.google.dagger:hilt-compiler:$version"
         }
+    }
+
+    object Maps {
+        const val maps = "com.google.android.libraries.maps:maps:3.1.0-beta"
+        const val ktx = "com.google.maps.android:maps-v3-ktx:2.2.0"
     }
 
 }

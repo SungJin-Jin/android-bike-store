@@ -12,7 +12,8 @@ fun StoreScreen() {
 
     NavHost(navController = navController, startDestination = Destinations.STORE_LIST) {
         composable(Destinations.STORE_LIST) {
-            StoreListScreen()
+            // TODO : Add navigation for create bike
+            StoreListScreen(onClickBikeAdd = { })
         }
     }
 }

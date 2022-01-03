@@ -8,6 +8,7 @@ class BikeRepository @Inject constructor(
     private val bikeDao: BikeDao
 ) {
 
+    // TODO : Remove mock data
     suspend fun findAll(): List<Bike> {
 //        return bikeDao.findAll()
         return listOf(
@@ -20,13 +21,22 @@ class BikeRepository @Inject constructor(
                 name = "Comp"
             ),
             Bike(
-                id = 0,
+                id = 1,
                 shopName = "MyBikeShop2",
                 latitude = -30.0f,
                 longitude = 80f,
                 manufacturer = "Trek",
                 name = "Cello"
             ),
+            Bike(
+                id = 2,
+                shopName = "이마트 은평점",
+                latitude = 37.600475f,
+                longitude = 126.92047f,
+                manufacturer = "Trek",
+                name = "Cello"
+            ),
+
         )
     }
 

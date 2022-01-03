@@ -38,7 +38,7 @@ fun BikeItem(bike: Bike) {
         ) {
             Text(
                 text = bike.name,
-                color = Color.White,
+                color = MaterialTheme.colors.secondary,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(vertical = 2.dp)
             )
